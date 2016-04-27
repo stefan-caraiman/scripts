@@ -18,3 +18,4 @@ function Add-VirtIODrivers($vhdDriveLetter = "C:", $image = "D:", $driversBasePa
         }
     }
 }
+Add-VirtIODrivers

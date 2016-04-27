@@ -1,7 +1,7 @@
 function AddDriversToImage($winImagePath, $driversPath)
 {
     Write-Output ('Adding drivers from "{0}" to image "{1}"' -f $driversPath, $winImagePath)
-    Add-WindowsDriver -Path $winImagePath -Driver $driversPath -ForceUnsigned -Recurse
+    pnputil.exe -i -a $driversPath\*.inf
     #& Dism.exe /image:${winImagePath} /Add-Driver /driver:${driversPath} /ForceUnsigned /recurse
     #if ($LASTEXITCODE) { throw "Dism failed to add drivers from: $driversPath" }
 }

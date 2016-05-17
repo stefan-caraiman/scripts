@@ -1,0 +1,9 @@
+winrm s winrm/config/client '@{TrustedHosts="10.0.2.195"}'
+Enter-PSSession -ComputerName 10.0.2.195 -UseSSL:$False -Authentication Basic -Credential (Get-Credential)
+
+grep -ir this_func .
+
+./wsmancmd.py -U http://10.0.2.195:5985/wsman -u CiAdmin -p Passw0rd 'powershell -Command ipconfig'
+
+
+nova secgroup-add-rule default tcp 5986 5986 0.0.0.0/0

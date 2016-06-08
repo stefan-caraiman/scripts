@@ -1,0 +1,31 @@
+diff --git a/apt.pp b/apt.pp
+index d69a192..1ff8f67 100644
+--- a/apt.pp
++++ b/apt.pp
+@@ -25,15 +25,18 @@ class rabbitmq::repo::apt(
+   }
+ 
+   apt::source { 'rabbitmq':
+-    ensure       => $ensure_source,
+-    location     => $location,
+-    release      => $release,
+-    repos        => $repos,
+-    include_src  => $include_src,
+-    key          => $key,
+-    key_source   => $key_source,
+-    key_content  => $key_content,
+-    architecture => $architecture,
++    ensure   => $ensure_source,
++    location => $location,
++    release  => $release,
++    repos    => $repos,
++    include  => {
++      'src' => $include_src
++    },
++    key      => {
++      'id'      => $key,
++      'source'  => $key_source,
++      'content' => $key_content,
++    },
+   }
+ 

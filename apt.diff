@@ -27,4 +27,3 @@ index d69a192..1ff8f67 100644
 +      'source'  => $key_source,
 +      'content' => $key_content,
 +    },
-}

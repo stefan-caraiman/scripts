@@ -1,0 +1,1 @@
+mkisofs -joliet-long -relaxed-filenames -R -V config-2 -o configdrive_data.iso ~/drives/new-drive/

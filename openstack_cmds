@@ -1,0 +1,25 @@
+#Restart a service:
+systemctl restart openstack-nova-compute
+systemctl restart openstack-nova-*
+service openstack-nova stop/start/restart
+systemctl disable openstack-gnocchi-metricd #disable a service
+openstack-service restart
+#Memory related data:
+ps ax | grep api
+ps -aux
+cat /proc/meminfo
+nova hypervisor-stats
+
+#Neutron commands
+neutron router-list
+neutron subnet-list
+neutron subnet-delete private_subnet
+neutron net-list
+neutron net-delete private
+neutron net-create private
+neutron subnet-create private IP/24 --name private --dns-namserver 8.8.8.8 --gateway
+
+#Creating images with glance
+glance image-create --visibility public --disk-format qcow2 --container-format bare --progress --file windows-image.qcow2 --name windows
+#Replace using sed
+sed -i 's/192.168.133.169/192.168.133.31/g' packstack-answers.txt

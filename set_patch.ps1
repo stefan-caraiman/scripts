@@ -1,0 +1,2 @@
+git clone https://github.com/stefan-caraiman/cloudbase-init; cd cloudbase-init; git checkout fix/new-lines-userdata;
+."C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\python.exe" C:/cloudbase-init/setup.py install;
